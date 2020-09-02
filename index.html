@@ -21,48 +21,78 @@
     function playRound() {
         let playerChoice = getPlayerChoice().toLowerCase;
         let computerChoice = computerPlay();
+        let result = "";
         
         if (playerChoice === computerChoice) {
-            return "You both chose the same thing. That's a tie! Try again.";
+            result = "You both chose the same thing. That's a tie! Try again.";
+            console.log(result);
+            return result;
         } else if (playerChoice === "rock" && computerChoice === "Paper") {
-            return "Paper beats Rock! You lose!";
+            result = "Paper beats Rock! You lose!";
+            console.log(result);
+            return result;
         } else if (playerChoice === "paper" && computerChoice === "Scissors") {
-            return "Scissors beats Paper! You lose!";
+            result = "Scissors beats Paper! You lose!";
+            console.log(result);
+            return result;
         } else if (playerChoice === "scissors" && computerChoice === "Rock") {
-            return "Rock beats Scissors! You lose!";
+            result = "Rock beats Scissors! You lose!";
+            console.log(result);
+            return result;
         } else if (playerChoice === "rock" && computerChoice === "Scissors") {
-            return "Rock beats Scissors! You win!";
+            result = "Rock beats Scissors! You win!";
+            console.log(result);
+            return result;
         } else if (playerChoice === "paper" && computerChoice === "Rock") {
-            return "Paper beats Rock! You win!";
+            result = "Paper beats Rock! You win!";
+            console.log(result);
+            return result;
         } else if (playerChoice === "scissors" && computerChoice === "Paper") {
-            return "Scissors beats Paper! You win!";
+            result = "Scissors beats Paper! You win!";
+            console.log(result);
+            return result;
         }
     }
 
     function scoreKeeper() {
-        let roundResult = playRound();
+
+            let roundResult = playRound();
+            if (roundResult === "You both chose the same thing. That's a tie! Try again.") {
+                console.log("No score change! Keep going.");
+            } else if (roundResult === "Paper beats Rock! You lose!") {
+                computerScore++;
+                console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            } else if (roundResult === "Scissors beats Paper! You lose!") {
+                computerScore++;
+                console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            } else if (roundResult === "Rock beats Scissors! You lose!") {
+                computerScore++;
+                console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            } else if (roundResult === "Rock beats Scissors! You win!") {
+                playerScore++;
+                console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            } else if (roundResult === "Paper beats Rock! You win!") {
+                playerScore++;
+                console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            }  else if (roundResult === "Scissors beats Paper! You win!") {
+                playerScore++;
+                console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            }
+    }
+
+    function game() {
+        
         let playerScore = 0;
         let computerScore = 0;
-        if (roundResult === "You both chose the same thing. That's a tie! Try again.") {
-            return "No score change! Keep going."
-        } else if (roundResult === "Paper beats Rock! You lose!") {
-            computerScore++;
-            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
-        } else if (roundResult === "Scissors beats Paper! You lose!") {
-            computerScore++;
-            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
-        } else if (roundResult === "Rock beats Scissors! You lose!") {
-            computerScore++;
-            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
-        } else if (roundResult === "Rock beats Scissors! You win!") {
-            playerScore++;
-            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
-        } else if (roundResult === "Paper beats Rock! You win!") {
-            playerScore++;
-            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
-        }  else if (roundResult === "Scissors beats Paper! You win!") {
-            playerScore++;
-            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
+
+        
+
+        if (playerScore > computerScore) {
+            console.log("You Won! Congrats!")
+        } else {
+            console.log("You Lost. Better Luck Next Time!")
         }
     }
+
+
 </script>

@@ -13,7 +13,29 @@
     }
 
     function getPlayerChoice() {
-        let playerChoice = prompt("What do you choose? Rock, Paper, or Scissors?");
+        let playerPrompt = prompt("What do you choose? Rock, Paper, or Scissors?");
+        let playerChoice = playerPrompt.toLowerCase();
         return playerChoice;
+    }
+
+    function playRound() {
+        let playerChoice = getPlayerChoice().toLowerCase;
+        let computerChoice = computerPlay();
+        
+        if (playerChoice === computerChoice) {
+            return "${playerChoice} & ${computerChoice}. You tied! Try again.";
+        } else if (playerChoice === "rock" && computerChoice === "Paper") {
+            return "Paper beats Rock! You lose!";
+        } else if (playerChoice === "paper" && computerChoice === "Scissors") {
+            return "Scissors beats Paper! You lose!";
+        } else if (playerChoice === "scissors" && computerChoice === "Rock") {
+            return "Rock beats Scissors! You lose!";
+        } else if (playerChoice === "rock" && computerChoice === "Scissors") {
+            return "Rock beats Scissors! You win!"
+        } else if (playerChoice === "paper" && computerChoice === "Rock") {
+            return "Paper beats Rock! You win!"
+        } else if (playerChoice === "scissors" && computerChoice === "Paper") {
+            return "Scissors beats Paper! You win!"
+        }
     }
 </script>

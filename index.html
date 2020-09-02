@@ -1,6 +1,14 @@
 <script>
     function computerPlay () {
         let compNum = Math.floor(Math.random() * Math.floor(3));
-        console.log(compNum);
+        let compChoice = "";
+        if (compNum === 0) {
+            compChoice = "Rock";
+        } else if (compNum === 1) {
+            compChoice = "Paper";
+        } else {
+            compChoice = "Scissors";
+        }
+        return compChoice;
     }
 </script>

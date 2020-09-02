@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<head>
 <script>
     function computerPlay () {
         let compNum = Math.floor(Math.random() * Math.floor(3));
@@ -19,43 +22,38 @@
     }
 
     function playRound() {
-        let playerChoice = getPlayerChoice().toLowerCase;
+        let playerChoice = getPlayerChoice().toLowerCase();
+        console.log(playerChoice);
         let computerChoice = computerPlay();
+        console.log(computerChoice);
         let result = "";
         
         if (playerChoice === computerChoice) {
             result = "You both chose the same thing. That's a tie! Try again.";
-            console.log(result);
-            return result;
         } else if (playerChoice === "rock" && computerChoice === "Paper") {
             result = "Paper beats Rock! You lose!";
-            console.log(result);
-            return result;
         } else if (playerChoice === "paper" && computerChoice === "Scissors") {
             result = "Scissors beats Paper! You lose!";
-            console.log(result);
-            return result;
         } else if (playerChoice === "scissors" && computerChoice === "Rock") {
             result = "Rock beats Scissors! You lose!";
-            console.log(result);
-            return result;
         } else if (playerChoice === "rock" && computerChoice === "Scissors") {
             result = "Rock beats Scissors! You win!";
-            console.log(result);
-            return result;
         } else if (playerChoice === "paper" && computerChoice === "Rock") {
             result = "Paper beats Rock! You win!";
-            console.log(result);
-            return result;
         } else if (playerChoice === "scissors" && computerChoice === "Paper") {
             result = "Scissors beats Paper! You win!";
-            console.log(result);
-            return result;
         }
+
+        console.log(result);
+        return result;
     }
 
-    function scoreKeeper() {
+    function game() {
+        
+        let playerScore = 0;
+        let computerScore = 0;
 
+        for (let i = 1; i <= 5; i++) {
             let roundResult = playRound();
             if (roundResult === "You both chose the same thing. That's a tie! Try again.") {
                 console.log("No score change! Keep going.");
@@ -78,21 +76,18 @@
                 playerScore++;
                 console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
             }
-    }
-
-    function game() {
-        
-        let playerScore = 0;
-        let computerScore = 0;
-
-        
+        }
 
         if (playerScore > computerScore) {
-            console.log("You Won! Congrats!")
+            console.log("You Won! Congrats!");
+        } else if (playerScore < computerScore) {
+            console.log("You Lost. Better Luck Next Time!");
         } else {
-            console.log("You Lost. Better Luck Next Time!")
+            console.log("Something went wrong! Whoops!");
         }
     }
 
 
 </script>
+</head>
+</html>

@@ -23,7 +23,7 @@
         let computerChoice = computerPlay();
         
         if (playerChoice === computerChoice) {
-            return "${playerChoice} & ${computerChoice}. You tied! Try again.";
+            return "You both chose the same thing. That's a tie! Try again.";
         } else if (playerChoice === "rock" && computerChoice === "Paper") {
             return "Paper beats Rock! You lose!";
         } else if (playerChoice === "paper" && computerChoice === "Scissors") {
@@ -31,11 +31,38 @@
         } else if (playerChoice === "scissors" && computerChoice === "Rock") {
             return "Rock beats Scissors! You lose!";
         } else if (playerChoice === "rock" && computerChoice === "Scissors") {
-            return "Rock beats Scissors! You win!"
+            return "Rock beats Scissors! You win!";
         } else if (playerChoice === "paper" && computerChoice === "Rock") {
-            return "Paper beats Rock! You win!"
+            return "Paper beats Rock! You win!";
         } else if (playerChoice === "scissors" && computerChoice === "Paper") {
-            return "Scissors beats Paper! You win!"
+            return "Scissors beats Paper! You win!";
+        }
+    }
+
+    function scoreKeeper() {
+        let roundResult = playRound();
+        let playerScore = 0;
+        let computerScore = 0;
+        if (roundResult === "You both chose the same thing. That's a tie! Try again.") {
+            return "No score change! Keep going."
+        } else if (roundResult === "Paper beats Rock! You lose!") {
+            computerScore++;
+            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
+        } else if (roundResult === "Scissors beats Paper! You lose!") {
+            computerScore++;
+            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
+        } else if (roundResult === "Rock beats Scissors! You lose!") {
+            computerScore++;
+            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
+        } else if (roundResult === "Rock beats Scissors! You win!") {
+            playerScore++;
+            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
+        } else if (roundResult === "Paper beats Rock! You win!") {
+            playerScore++;
+            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
+        }  else if (roundResult === "Scissors beats Paper! You win!") {
+            playerScore++;
+            return "Your score: ${playerScore} Computer's Score: ${computerScore}"
         }
     }
 </script>

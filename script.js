@@ -2,6 +2,9 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
+const resultText = document.querySelector(".result-text");
+const scoreText = document.querySelector(".score-text");
+
 rockButton.addEventListener('click', playRound);
 paperButton.addEventListener('click', playRound);
 scissorsButton.addEventListener('click', playRound);
@@ -26,11 +29,19 @@ function getPlayerChoice() {
 }
 
 function playRound() {
-    let playerChoice = getPlayerChoice().toLowerCase();
+    let playerChoice = ""
     console.log(playerChoice);
     let computerChoice = computerPlay();
     console.log(computerChoice);
     let result = "";
+
+    if (e.target === rockButton) {
+        playerChoice = 'rock'
+    } else if (e.target === paperButton) {
+        playerChoice = 'paper'
+    } else if (e.target === scissorsButton) {
+        playerChoice = 'scissors'
+    }
     
     if (playerChoice === computerChoice) {
         result = "You both chose the same thing. That's a tie! Try again.";
@@ -60,25 +71,32 @@ function game() {
     for (let i = 1; i <= 5; i++) {
         let roundResult = playRound();
         if (roundResult === "You both chose the same thing. That's a tie! Try again.") {
-            console.log("No score change! Keep going.");
+            resultText.textContent = "You both chose the same thing. That's a tie! Try again.";
+            scoreText.textContent = "No score change! Keep going.";
         } else if (roundResult === "Paper beats Rock! You lose!") {
             computerScore++;
-            console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            resultText.textContent = "Paper beats Rock!"
+            scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
         } else if (roundResult === "Scissors beats Paper! You lose!") {
             computerScore++;
-            console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            resultText.textContent = "Scissors beats Paper! You lose!";
+            scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
         } else if (roundResult === "Rock beats Scissors! You lose!") {
             computerScore++;
-            console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            resultText.textContent = "Rock beats Scissors! You lose!";
+            scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
         } else if (roundResult === "Rock beats Scissors! You win!") {
             playerScore++;
-            console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            resultText.textContent = "Rock beats Scissors! You win!";
+            scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
         } else if (roundResult === "Paper beats Rock! You win!") {
             playerScore++;
-            console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            resultText.textContent = "Paper beats Rock! You win!";
+            scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
         }  else if (roundResult === "Scissors beats Paper! You win!") {
             playerScore++;
-            console.log(`Your score: ${playerScore} Computer's Score: ${computerScore}`);
+            resultText.textContent = "Scissors beats Paper! You win!";
+            scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
         }
     }
 

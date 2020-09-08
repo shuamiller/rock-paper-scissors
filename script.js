@@ -1,4 +1,6 @@
 const rockButton = document.querySelector(".rock");
+const paperButton = document.querySelector(".paper");
+const scissorsButton = document.querySelector(".scissors");
 
 function computerPlay () {
     let compNum = Math.floor(Math.random() * Math.floor(3));

@@ -2,6 +2,10 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
+rockButton.addEventListener('click', playRound);
+paperButton.addEventListener('click', playRound);
+scissorsButton.addEventListener('click', playRound);
+
 function computerPlay () {
     let compNum = Math.floor(Math.random() * Math.floor(3));
     let compChoice = "";

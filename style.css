@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,300;1,900&display=swap');;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(235, 195, 208);
+}
+
+h1 {
+    text-align: center;
+    margin: 4rem auto;
+    font-family: 'Grandstander', cursive;
+    font-size: 4rem;
+    color: rgb(7, 152, 209);
+}
+
+.question {
+    text-align: center;
+    margin: 0 auto 2rem;
+    font-family: 'Grandstander', cursive;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.choice-button {
+    margin: 1rem;
+}
+
+.buttons {
+    width: 8rem;
+    height: 4rem;
+    border-radius: .5rem;
+    border-style: none;
+    font-family: 'Grandstander', cursive;
+    font-size: 1.5rem;
+    background-color: rgb(7, 152, 209);
+    color: white;
+}
+.result-text, .score-text {
+    text-align: center;
+    font-family: 'Grandstander', cursive;
+}

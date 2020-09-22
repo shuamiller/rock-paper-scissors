@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Rock, Paper, Scissors!</h1>
-    <div class="choice-button">
-        <button class="rock">Rock</button>
-    </div>
-    <div class="choice-button">
-        <button class="paper">Paper</button>
-    </div>
-    <div class="choice-button">
-        <button class="scissors">Scissors</button>
+    <h2 class="question">
+        What Will You Choose? Rock, Paper, or Scissors?
+    </h2>
+    <div class="button-container">
+        <div class="choice-button">
+            <button class="buttons" id="rock">Rock</button>
+        </div>
+        <div class="choice-button">
+            <button class="buttons" id="paper">Paper</button>
+        </div>
+        <div class="choice-button">
+            <button class="buttons" id="scissors">Scissors</button>
+        </div>
     </div>
     <div class="result">
-        <p class="result-text">What do you choose? Rock, Paper, or Scissors?</p>
+        <p class="result-text"></p>
         <p class="score-text"></p>
     </div>
     <script src="script.js"></script>

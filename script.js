@@ -72,7 +72,7 @@ function game(e) {
         scoreText.textContent = "No score change! Keep going.";
     } else if (roundResult === "Paper beats Rock! You lose!") {
         computerScore++;
-        resultText.textContent = "Paper beats Rock!"
+        resultText.textContent = "Paper beats Rock! You lose!"
         scoreText.textContent = `Your score: ${playerScore} Computer's Score: ${computerScore}`;
     } else if (roundResult === "Scissors beats Paper! You lose!") {
         computerScore++;
